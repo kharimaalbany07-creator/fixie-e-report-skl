@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fixie</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/Group 1148.png">
+</head>
+
+<body>
+
+    <div class="bg">
+
+        <img class="deco-blue" src="assets/pixel_art_large (1).png" alt="">
+        <img class="deco-pink" src="assets/pixel_art_large.png" alt="">
+
+    </div>
+
+    <header class="header">
+        <a href="index.html" class="logo">
+            <img src="assets/Group 1148.png" alt="">
+            Fixie
+        </a>
+
+        <nav class="navbar-home">
+            <a href="#" class="active">Report</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+
+    </header>
+
+    <main class="layout">
+        <section class="hero">
+
+            <img class="star" src="assets/Group 1148.png" alt="">
+
+            <h1>
+                <span class="well">
+                    Well... <small class="emot">(^ _ ^)</small>
+                </span>
+                <br>
+                Something’s<span><mark><i>Broken.</i></mark></span>
+            </h1>
+
+            <p>Something needs fixing? Let us know.</p>
+
+        </section>
+
+        <form class="form" id="facility-report-form" action="#" method="post" onsubmit="handelFormSubmit(event)">
+
+            <label for="pelapor">Reporter</label>
+
+            <input type="text" id="input-reporter" name="reporter" placeholder="Full Name / Class" >
+
+            <label for="kategori">Category</label>
+
+            <select id="select-category" name="category" >
+                <option value="" selected disabled>Select Damage Category</option>
+                <option value="AC">AC</option>
+                <option value="Furniture">Furniture</option>
+                <option value="Sanitasi">Sanitasi</option>
+                <option>Other</option>
+            </select>
+
+            <label for="deskripsi">Description</label>
+
+            <textarea id="deskripsi" name="deskripsi" placeholder="Describe the damaged facility and its location...."
+                 maxlength="20"   ></textarea>
+
+            <button type="submit" id="btn-submit" class="submit">Submit Report</button>
+
+        </form>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    
+
+
+</body>
+
+</html>
