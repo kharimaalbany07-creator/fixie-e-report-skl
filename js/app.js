@@ -5,7 +5,6 @@ let daftarLaporan = [];
 // READ => memanggil data dari data.js
 function muatData() {
 
-    // BARU: kalau halaman di-refresh, hapus data yang tersimpan
     const navigasi = performance.getEntriesByType('navigation')[0];
     if (navigasi && navigasi.type === 'reload') {
         localStorage.removeItem(KUNCI_STORAGE);
@@ -29,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function tampikanDataTabel() {
     const tabelBody = document.getElementById('reports-table-body');
 
-    // BARU: di halaman index tidak ada tabel, jadi berhenti di sini
     if (!tabelBody) return;
 
     tabelBody.innerHTML = '';
@@ -77,13 +75,8 @@ function handelFormSubmit(event) {
         status: 'Menunggu',
     };
 
-    // BARU: timpa semua data lama, jadi cuma laporan terbaru yang tersisa
-    daftarLaporan = [laporanBaru];
-        //menambahkan laporan baru ke data lama
+    //menambahkan laporan baru ke data lama
     daftarLaporan.unshift(laporanBaru);
-
-   
-    
 
     simpanData();
     tampikanDataTabel();
